@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PlanA Radio LA No.34 — Fall in Love</title>
+
+<style>
+
+:root {
+  --bg: #07070a;
+  --panel: #111116;
+  --panel2: #17171e;
+  --border: rgba(255,255,255,.09);
+  --text: #ffffff;
+  --muted: #92919b;
+  --soft: #c8c6ce;
+  --accent: #d9a7ff;
+  --accent2: #8e5bd1;
+  --green: #7ee2b2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(139, 76, 180, .20), transparent 30%),
+    radial-gradient(circle at 0% 30%, rgba(90, 48, 120, .12), transparent 28%),
+    var(--bg);
+
+  color: var(--text);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  min-height: 100vh;
+}
+
+
+/* ---------------- HEADER ---------------- */
+
+header {
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7%;
+
+  border-bottom: 1px solid var(--border);
+
+  background: rgba(7,7,10,.84);
+
+  backdrop-filter: blur(18px);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 50;
+}
+
+.station-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+.radio-dot {
+  width: 11px;
+  height: 11px;
+
+  background: var(--accent);
+
+  border-radius: 50%;
+
+  box-shadow: 0 0 18px rgba(217,167,255,.8);
+}
+
+.station-name span {
+  font-size: 14px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--muted);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  transition: .2s;
+}
+
+nav a:hover {
+  color: white;
+}
+
+
+/* ---------------- MAIN ---------------- */
+
+main {
+  width: min(1120px, 90%);
+
+  margin: auto;
+
+  padding: 55px 0 80px;
+}
+
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+  display: grid;
+
+  grid-template-columns: 1.2fr .8fr;
+
+  gap: 60px;
+
+  align-items: center;
+
+  padding: 35px 0 65px;
+}
+
+.live-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--green);
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: .18em;
+
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+.live-label i {
+  width: 7px;
+  height: 7px;
+
+  background: var(--green);
+
+  border-radius: 50%;
+
+  box-shadow: 0 0 12px var(--green);
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(48px, 7vw, 88px);
+
+  line-height: .92;
+
+  letter-spacing: -.055em;
+}
+
+.hero h1 span {
+  display: block;
+
+  color: var(--accent);
+}
+
+.artist-line {
+  margin-top: 22px;
+
+  font-size: 20px;
+
+  color: var(--soft);
+}
+
+.artist-line strong {
+  color: white;
+}
+
+.hero-description {
+  color: var(--muted);
+
+  max-width: 600px;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+
+  margin-top: 20px;
+}
+
+
+/* ---------------- PLAY BUTTON ---------------- */
+
+.play-area {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+.play-button {
+  border: 0;
+
+  width: 62px;
+  height: 62px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #09090c;
+
+  font-size: 23px;
+
+  cursor: pointer;
+
+  display: grid;
+
+  place-items: center;
+
+  transition: .25s;
+
+  box-shadow:
+    0 12px 35px rgba(255,255,255,.12);
+}
+
+.play-button:hover {
+  transform: scale(1.07);
+}
+
+.play-label strong {
+  display: block;
+
+  font-size: 14px;
+}
+
+.play-label small {
+  color: var(--muted);
+
+  display: block;
+
+  margin-top: 4px;
+}
+
+
+/* ---------------- ARTWORK ---------------- */
+
+.artwork-container {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.artwork {
+  width: min(390px, 100%);
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 26px;
+
+  display: block;
+
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.65),
+    0 0 70px rgba(141,83,178,.17);
+}
+
+.artwork-label {
+  position: absolute;
+
+  bottom: 18px;
+  left: 18px;
+
+  background: rgba(0,0,0,.72);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  border-radius: 12px;
+
+  padding: 10px 13px;
+
+  font-size: 10px;
+
+  letter-spacing: .1em;
+
+  font-weight: 800;
+}
+
+
+/* ---------------- ARTIST PROFILE ---------------- */
+
+.profile {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  padding: 25px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.profile-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+}
+
+.avatar {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 2px solid rgba(255,255,255,.12);
+}
+
+.profile h2 {
+  margin: 0 0 4px;
+
+  font-size: 17px;
+}
+
+.profile p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+.instagram {
+  color: var(--accent);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+
+/* ---------------- SECTIONS ---------------- */
+
+.section {
+  margin-top: 70px;
+}
+
+.section-heading {
+  display: flex;
+
+  align-items: end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.kicker {
+  color: var(--accent);
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: .18em;
+
+  text-transform: uppercase;
+
+  margin-bottom: 9px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: 30px;
+
+  letter-spacing: -.03em;
+}
+
+.section-heading p {
+  color: var(--muted);
+
+  font-size: 12px;
+
+  margin: 0;
+}
+
+
+/* ---------------- STATS ---------------- */
+
+.stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 13px;
+}
+
+.stat-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.018)
+    );
+
+  border: 1px solid var(--border);
+
+  border-radius: 20px;
+
+  padding: 23px;
+
+  min-height: 150px;
+}
+
+.stat-card .label {
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+.stat-number {
+  font-size: 38px;
+
+  font-weight: 900;
+
+  margin: 13px 0 4px;
+
+  letter-spacing: -.04em;
+}
+
+.stat-card small {
+  color: #686770;
+
+  font-size: 10px;
+}
+
+
+/* ---------------- CAMPAIGN ---------------- */
+
+.campaign {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139,85,180,.18),
+      rgba(255,255,255,.025)
+    );
+
+  border: 1px solid rgba(216,167,255,.16);
+
+  border-radius: 25px;
+
+  padding: 30px;
+}
+
+.campaign-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: start;
+
+  gap: 20px;
+}
+
+.campaign h2 {
+  margin: 0;
+
+  font-size: 27px;
+}
+
+.badge {
+  padding: 7px 10px;
+
+  border-radius: 30px;
+
+  background: rgba(126,226,178,.1);
+
+  border: 1px solid rgba(126,226,178,.2);
+
+  color: var(--green);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: .1em;
+}
+
+.campaign-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.campaign-box {
+  background: rgba(0,0,0,.2);
+
+  border: 1px solid var(--border);
+
+  border-radius: 17px;
+
+  padding: 20px;
+}
+
+.campaign-box span {
+  color: var(--muted);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: .1em;
+}
+
+.campaign-box strong {
+  display: block;
+
+  font-size: 27px;
+
+  margin: 9px 0 3px;
+}
+
+.campaign-box p {
+  color: #777580;
+
+  font-size: 10px;
+
+  margin: 0;
+}
+
+.disclaimer {
+  color: #777580;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+
+  margin: 22px 0 0;
+}
+
+
+/* ---------------- AIRPLAY ---------------- */
+
+.airplay {
+  border: 1px solid var(--border);
+
+  border-radius: 23px;
+
+  overflow: hidden;
+
+  background: var(--panel);
+}
+
+.airplay-row {
+  display: grid;
+
+  grid-template-columns: 130px 1fr 120px;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 20px 22px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.airplay-row:last-child {
+  border-bottom: 0;
+}
+
+.airplay-date {
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+.airplay-info strong {
+  display: block;
+
+  font-size: 13px;
+
+  margin-bottom: 4px;
+}
+
+.airplay-info span {
+  color: #777580;
+
+  font-size: 10px;
+}
+
+.status {
+  text-align: right;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: .08em;
+
+  color: var(--accent);
+}
+
+
+/* ---------------- LINKS ---------------- */
+
+.music-links {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.music-link {
+  padding: 12px 16px;
+
+  border: 1px solid var(--border);
+
+  background: var(--panel);
+
+  border-radius: 12px;
+
+  color: var(--soft);
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  transition: .2s;
+}
+
+.music-link:hover {
+  border-color: rgba(217,167,255,.35);
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+  border-top: 1px solid var(--border);
+
+  margin-top: 80px;
+
+  padding: 30px 7%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color: #66646d;
+
+  font-size: 10px;
+}
+
+footer strong {
+  color: #a09da7;
+}
+
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 760px) {
+
+  header {
+    height: 64px;
+
+    padding: 0 5%;
+  }
+
+  .station-name span {
+    font-size: 11px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  main {
+    width: 91%;
+
+    padding-top: 30px;
+  }
+
+  .hero {
+    display: flex;
+
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+
+    gap: 30px;
+
+    padding-bottom: 40px;
+  }
+
+  .artwork-container {
+    width: 100%;
+  }
+
+  .artwork {
+    width: 100%;
+
+    border-radius: 21px;
+  }
+
+  .hero h1 {
+    font-size: 54px;
+  }
+
+  .artist-line {
+    font-size: 17px;
+  }
+
+  .play-button {
+    width: 58px;
+    height: 58px;
+  }
+
+  .profile {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px;
+  }
+
+  .stat-card {
+    min-height: 130px;
+
+    padding: 18px;
+  }
+
+  .stat-number {
+    font-size: 31px;
+  }
+
+  .section {
+    margin-top: 48px;
+  }
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
+  .campaign {
+    padding: 21px;
+
+    border-radius: 20px;
+  }
+
+  .campaign-grid {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+  .campaign-box {
+    padding: 17px;
+  }
+
+  .airplay-row {
+    grid-template-columns: 1fr auto;
+
+    gap: 7px;
+
+    padding: 18px;
+  }
+
+  .airplay-date {
+    grid-column: 1 / -1;
+
+    margin-bottom: 3px;
+  }
+
+  .status {
+    text-align: right;
+  }
+
+  footer {
+    margin-top: 55px;
+
+    padding: 25px 5%;
+
+    flex-direction: column;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="station-name">
+  <div class="radio-dot"></div>
+  <span>PLAN A RADIO LA NO.34</span>
+</div>
+
+<nav>
+  <a href="#stats">Stats</a>
+  <a href="#airplay">Airplay</a>
+  <a href="#artist">Artist</a>
+</nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+
+<div>
+
+<div class="live-label">
+  <i></i>
+  RADIO ARTIST PROFILE
+</div>
+
+<h1>
+  Fall in
+  <span>Love</span>
+</h1>
+
+<div class="artist-line">
+  Song by <strong>360</strong> featuring <strong>Queen Of Flow</strong>
+</div>
+
+<p class="hero-description">
+  Official campaign profile for the single
+  “Fall in Love”, featuring Queen Of Flow.
+  Follow the radio campaign, listener requests
+  and scheduled airplay activity.
+</p>
+
+
+<div class="play-area">
+
+<button
+  class="play-button"
+  id="playButton"
+  onclick="toggleSong()"
+  aria-label="Play song"
+>
+  ▶
+</button>
+
+<div class="play-label">
+
+<strong id="playText">
+  Play Song
+</strong>
+
+<small>
+  Fall in Love — 360 ft Queen Of Flow
+</small>
+
+</div>
+
+</div>
+
+<audio id="song">
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+
+
+<div class="artwork-container">
+
+<img
+  src="artwork.jpg"
+  class="artwork"
+  alt="Fall in Love by 360 featuring Queen Of Flow"
+>
+
+<div class="artwork-label">
+  PLAN A RADIO • LA NO.34
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ARTIST -->
+
+<section id="artist" class="profile">
+
+<div class="profile-left">
+
+<img
+  src="artwork.jpg"
+  class="avatar"
+  alt="Queen Of Flow"
+>
+
+<div>
+
+<h2>
+  Queen Of Flow
+</h2>
+
+<p>
+  Featured Artist • Fall in Love
+</p>
+
+</div>
+
+</div>
+
+
+<a
+  class="instagram"
+  href="https://www.instagram.com/queen_of_flowog/"
+  target="_blank"
+>
+  @queen_of_flowog
+</a>
+
+</section>
+
+
+
+<!-- STATS -->
+
+<section id="stats" class="section">
+
+<div class="section-heading">
+
+<div>
+
+<div class="kicker">
+  Campaign Statistics
+</div>
+
+<h2>
+  Radio overview
+</h2>
+
+</div>
+
+<p>
+  Plan A Radio LA No.34
+</p>
+
+</div>
+
+
+
+<div class="stats">
+
+
+<div class="stat-card">
+
+<div class="label">
+  Tomorrow's target
+</div>
+
+<div class="stat-number">
+  1
+</div>
+
+<small>
+  Planned play
+</small>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<div class="label">
+  Weekly target
+</div>
+
+<div class="stat-number">
+  9
+</div>
+
+<small>
+  Planned plays / week
+</small>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<div class="label">
+  Requests
+</div>
+
+<div class="stat-number">
+  3
+</div>
+
+<small>
+  Listener request target
+</small>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<div class="label">
+  4-week target
+</div>
+
+<div class="stat-number">
+  36
+</div>
+
+<small>
+  Planned plays
+</small>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- CAMPAIGN -->
+
+<section class="section">
+
+<div class="campaign">
+
+<div class="campaign-top">
+
+<div>
+
+<div class="kicker">
+  Plan A Radio LA No.34
+</div>
+
+<h2>
+  Fall in Love Radio Campaign
+</h2>
+
+</div>
+
+<div class="badge">
+  ACTIVE CAMPAIGN
+</div>
+
+</div>
+
+
+<div class="campaign-grid">
+
+
+<div class="campaign-box">
+
+<span>
+  Tomorrow
+</span>
+
+<strong>
+  1 Play
+</strong>
+
+<p>
+  Scheduled campaign target
+</p>
+
+</div>
+
+
+
+<div class="campaign-box">
+
+<span>
+  Weekly
+</span>
+
+<strong>
+  9 Plays
+</strong>
+
+<p>
+  Target per week
+</p>
+
+</div>
+
+
+
+<div class="campaign-box">
+
+<span>
+  Four Weeks
+</span>
+
+<strong>
+  36 Plays
+</strong>
+
+<p>
+  Total campaign target
+</p>
+
+</div>
+
+
+</div>
+
+
+<p class="disclaimer">
+  Campaign targets represent planned activity and are
+  separate from verified airplay. Verified plays should
+  only be added when confirmed by the station.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- AIRPLAY -->
+
+<section id="airplay" class="section">
+
+<div class="section-heading">
+
+<div>
+
+<div class="kicker">
+  Airplay Activity
+</div>
+
+<h2>
+  Recent activity
+</h2>
+
+</div>
+
+<p>
+  Station reporting
+</p>
+
+</div>
+
+
+<div class="airplay">
+
+
+<div class="airplay-row">
+
+<div class="airplay-date">
+  19 SEP 2026
+</div>
+
+<div class="airplay-info">
+
+<strong>
+  Fall in Love
+</strong>
+
+<span>
+  360 ft Queen Of Flow
+</span>
+
+</div>
+
+<div class="status">
+  SCHEDULED
+</div>
+
+</div>
+
+
+
+<div class="airplay-row">
+
+<div class="airplay-date">
+  WEEK 01
+</div>
+
+<div class="airplay-info">
+
+<strong>
+  Radio campaign
+</strong>
+
+<span>
+  Weekly target: 9 plays
+</span>
+
+</div>
+
+<div class="status">
+  PLANNED
+</div>
+
+</div>
+
+
+
+<div class="airplay-row">
+
+<div class="airplay-date">
+  WEEKS 02–04
+</div>
+
+<div class="airplay-info">
+
+<strong>
+  Continuing campaign
+</strong>
+
+<span>
+  9 plays per week
+</span>
+
+</div>
+
+<div class="status">
+  PLANNED
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- MUSIC LINKS -->
+
+<section class="section">
+
+<div class="section-heading">
+
+<div>
+
+<div class="kicker">
+  Listen
+</div>
+
+<h2>
+  Fall in Love
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="music-links">
+
+<a class="music-link" href="#" target="_blank">
+  Spotify
+</a>
+
+<a class="music-link" href="#" target="_blank">
+  Apple Music
+</a>
+
+<a class="music-link" href="#" target="_blank">
+  YouTube
+</a>
+
+<a
+  class="music-link"
+  href="https://www.instagram.com/queen_of_flowog/"
+  target="_blank"
+>
+  Instagram
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+<div>
+  <strong>Plan A Radio LA No.34</strong>
+  <br>
+  Radio Artist Profile
+</div>
+
+<div>
+  Fall in Love • 360 ft Queen Of Flow
+</div>
+
+</footer>
+
+
+
+<script>
+
+const audio = document.getElementById("song");
+const button = document.getElementById("playButton");
+const playText = document.getElementById("playText");
+
+
+function toggleSong() {
+
+  if (audio.paused) {
+
+    audio.play()
+      .then(() => {
+
+        button.innerHTML = "❚❚";
+
+        playText.innerText = "Playing";
+
+      })
+      .catch(() => {
+
+        alert(
+          "Add your song as song.mp3 to the GitHub repository first."
+        );
+
+      });
+
+  } else {
+
+    audio.pause();
+
+    button.innerHTML = "▶";
+
+    playText.innerText = "Play Song";
+
+  }
+
+}
+
+
+audio.addEventListener("ended", function() {
+
+  button.innerHTML = "▶";
+
+  playText.innerText = "Play Song";
+
+});
+
+</script>
+
+
+</body>
+  </html>
